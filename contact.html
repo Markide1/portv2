@@ -58,6 +58,9 @@
 
   <!-- CSS File Link -->
   <link rel="stylesheet" href="css/contact.css" />
+
+  <!-- Send Mail  -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -91,19 +94,19 @@
       <div class="contact-form">
         <h2>Send a Message</h2>
         <form id="contact-form">
-          <form action="mailto:markndwiga@gmail.com" method="POST">
-            <label for="name"> Name:</label>
-            <input type="text" id="name" name="name" required placeholder="What's your name?" />
+          <label for="name"> Name:</label>
+          <input type="text" id="name" name="from_name" required placeholder="What's your name?" />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="How about your email?" />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="from_email" required placeholder="How about your email?" />
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="6" required placeholder="Your thoughts?"></textarea>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Your thoughts?"></textarea>
 
-            <input type="submit" value="Send Message" />
-            <div id="msg"></div>
-          </form>
+          <input type="submit" value="Send Message" />
+
+          <div id="notification"></div>
+        </form>
       </div>
 
 
@@ -175,9 +178,7 @@
             portfolio can be delivered in a week, a complete system can take
             months. For SEO in a few hours.
           </p>
-
         </div>
-
       </div>
       </div>
     </main>
@@ -187,6 +188,7 @@
 
     <!-- JavaScript -->
     <script src="js/components.js" defer></script>
+
     <script src="js/contact.js" defer></script>
 </body>
 

@@ -64,6 +64,7 @@ body.no-scroll {
 }
 
 /* Contact Form Section */
+
 .contact-form {
   background-color: #ffffff;
   padding: 2rem;
@@ -130,6 +131,22 @@ body.no-scroll {
 
 .contact-form input[type="submit"]:hover {
   background-color: var(--secondary-blue);
+}
+
+#notification {
+  display: none;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 /* Contact Info Section */

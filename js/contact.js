@@ -17,55 +17,57 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Contact Form Handling
-  const contactForm = document.querySelector(
-    'form[name="submit-to-google-sheet"]'
-  );
-  const msgElement =
-    document.getElementById("msg") || document.createElement("div");
 
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();
 
-      // Email Validation
-      const emailInput = document.getElementById("email");
-      const email = emailInput.value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        emailInput.focus();
-        return;
-      }
+// Initialize EmailJS
+(function () {
+  emailjs.init("yL67veS68GcByv1He");  
+})();
 
-      // Google Sheet Script URL
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbzLxTBYvN6Ozl0NTHWX0hlMbSpEZjEbsDEUTG25TvpdEj5mYrwcucYlTvIfmq6IRQeJ/exec";
+// Email validation function
+function validateEmail(email) {
+  const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return re.test(String(email).toLowerCase());
+}
 
-      fetch(scriptURL, {
-        method: "POST",
-        body: new FormData(contactForm),
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          msgElement.textContent = "Message sent successfully!";
-          msgElement.style.color = "green";
-          contactForm.reset();
+// Show notification
+function showNotification(message, isSuccess) {
+  const notification = document.getElementById('notification');
+  notification.textContent = message;
+  notification.className = isSuccess ? 'success' : 'error';
+  notification.style.display = 'block';
 
-          setTimeout(() => {
-            msgElement.textContent = "";
-          }, 3000);
-        })
-        .catch((error) => {
-          console.error("Error!", error);
-          msgElement.textContent = "An error occurred. Please try again.";
-          msgElement.style.color = "red";
-        });
-    });
-  } else {
-    console.error("Contact form not found");
+  setTimeout(() => {
+      notification.style.display = 'none';
+  }, 4000);
+}
+
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  if (!validateEmail(email)) {
+      showNotification('Please enter a valid email address', false);
+      return;
   }
-});
+
+  emailjs.sendForm(
+      'service_devmail',     // Service ID
+      'template_jtnyfzu',    // Template ID
+      this
+  ).then(
+      function (response) {
+          showNotification('Message sent successfully!', true);
+          document.getElementById('contact-form').reset();
+      },
+      function (error) {
+          showNotification('Failed to send message. Please try again.', false);
+          console.error('EmailJS error:', error);
+      })
+    })
+  })
+    

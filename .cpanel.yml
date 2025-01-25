@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/experie1/markide/ 
+    - /bin/cp -R ./port v2 $DEPLOYPATH

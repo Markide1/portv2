@@ -79,9 +79,27 @@ port v2/
 --- 
 
 ## Screenshots:
-```
 
-```
+### Homepage
+![Homepage](screenshots/Homepage.png)
+
+
+### About Page
+![About Page](screenshots/About.png)
+
+
+
+### Services Page
+![Services Page](screenshots/Services.png)
+
+
+### Portfolio Page
+![Portfolio Page](screenshots/Portfolio.png)
+
+
+### Contact Page
+![Contact Page](screenshots/Contact.png)
+
 ---
 ## Credits:
 
@@ -91,5 +109,5 @@ port v2/
 ---
 
 ### Notes:
-- [GitHub](https://github.com/Markide1/portv2)
+- [GitHub Repo](https://github.com/Markide1/portv2)
 - [Live site](https://markide.co.ke/)

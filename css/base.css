@@ -1,0 +1,24 @@
+@import "components.css";
+
+/* Global Variables */
+:root {
+  --primary-blue: #007bff;
+  --secondary-blue: #0056b3;
+  --dark-blue: #004085;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-100: #f8f9fa;
+  --gray-200: #e9ecef;
+  --gray-800: #343a40;
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--black) 100%);
+  --gradient-hover: linear-gradient(135deg, var(--dark-blue) 0%, var(--black) 100%);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,287 @@
+@import "base.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--gray-800);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;   
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #000, #007bff);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-bottom: 20px;
+} 
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portrait-container {
+  margin-bottom: 2rem;
+}
+
+.portrait {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-text .lead {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Section Titles */
+h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Timeline */
+.timeline {
+  border-left: 3px solid #007bff;
+  padding-left: 1.5rem;
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+}
+
+.timeline-item .year {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item h3 a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.timeline-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.achievements {
+  margin-top: 1rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.skill-category h3 {
+  margin-bottom: 1rem;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-category ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.skill-category ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+}
+
+/* Education & Certifications */
+.credentials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.credential {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 1rem);
+}
+
+.credential h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+/* Work Philosophy */
+.work-philosophy {
+  padding: 3rem 0;
+}
+
+.philosophy-principles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.principle {
+  flex: 1 1 calc(33.33% - 1rem);
+}
+
+.principle h3 {
+  color: var;
+  margin-bottom: 0.5rem;
+}
+
+/* Tools & Technologies */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.tool-category ul {
+  padding: 0;
+  list-style: none;
+}
+
+.tool-category ul li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.tool-category ul li::before {
+  content: "⚙";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+}
+
+/* Personal Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 30px;
+}
+
+.project {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+/* Call to Action */
+.about-cta {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 10px;
+}
+
+.about-cta h2 {
+  color: #007bff;
+}
+
+.cta-buttons {
+  margin-top: 2rem;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 26px;
+}
+
+.cta-primary {
+  background: var(--secondary-blue);
+  color: white;
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: white;
+}
+
+.cta-secondary {
+  background: white;
+  color: #007bff;
+  border: 2px solid #007bff;
+}
+
+.cta-secondary:hover {
+  background: var(--secondary-blue);
+  color: var(--white);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* Links */
+a {
+  text-decoration: none; 
+       
+}
+
+a:hover {
+  text-decoration: underline; 
+  color: var(--primary-color); 
+}

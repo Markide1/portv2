@@ -1,0 +1,248 @@
+@import "base.css";
+
+/* Header */
+.main-header {
+  background: var(--gradient-primary);
+  position: relative;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.main-nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1100;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: var(--gradient-primary);
+  transition: right 0.3s ease;
+  z-index: 1200;
+  padding: 2rem;
+  color: var(--white);
+  overflow-y: auto;
+}
+
+.sidebar-menu.active {
+  right: 0;
+}
+
+.sidebar-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 2rem;
+color: var(--white);
+}
+
+.close-sidebar {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  }
+
+  .sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  }
+
+  .sidebar-nav li {
+  margin: 1rem 0;
+  }
+
+  .sidebar-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  padding: 0.5rem 0;
+  transition: var(--transition);
+  }
+  
+  .sidebar-nav a:hover,
+  .sidebar-nav a.active {
+  padding-left: 10px;
+  color: var(--gray-200);
+  }
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--black-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 1100;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.sidebar-footer {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+}
+
+.sidebar-footer .social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.sidebar-footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+  .main-nav {
+      display: none;
+  }
+
+  .hamburger-menu {
+      display: block;
+  }
+}
+
+
+/* Footer */
+.main-footer {
+  background: var(--gradient-primary);
+  color: var(--gray-100);
+  padding: 20px 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.main-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.footer-about,
+.footer-contact,
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+  text-align: center;
+}
+
+.footer-about h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.footer-about p,
+.footer-contact p,
+.footer-social p {
+  font-size: 16px;
+  text-align: center;
+  margin: 5px 0;
+}
+
+.footer-contact a,
+.footer-social .social-links a {
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.footer-contact a:hover,
+.footer-social .social-links a:hover {
+  color: var(--primary-blue);
+}
+
+.footer-contact i,
+.footer-social .social-links i {
+  margin-right: 10px;
+  color: var(--white);
+}
+
+.footer-contact a:hover i,
+.footer-social .social-links a:hover i {
+  color: var(--primary-blue);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid var(--gray-200);
+  padding-top: 10px;
+  color: var(--gray-200);
+}
+
+.footer-bottom p {
+  margin: 0;
+}

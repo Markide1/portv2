@@ -1,0 +1,333 @@
+@import "base.css";
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--gray-800);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;   
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero {
+  background: var(--gradient-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('/images/m1.PNG');
+  opacity: 1;
+  top: 0;
+  left: 0;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  color: var(--primary-blue);
+  text-align: center;
+  padding: 0 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+.cta-primary,
+.cta-secondary {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.cta-primary {
+  background: var(--secondary-blue);
+  color: var(--white);
+}
+
+.cta-secondary {
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-secondary:hover {
+  background: var(--secondary-blue);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Services Overview */
+.services-overview {
+  padding: 30px 20px;
+}
+
+.services-overview .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-overview h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-bottom: 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.service-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-card ul li {
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+
+.learn-more {
+  display: inline-block;
+  padding: 12px 15px; 
+  background-color: var(--primary-blue);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 16px;  
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: auto;
+  margin-left: auto; 
+  margin-right: auto;  
+  border-radius: 26px;
+}
+
+.learn-more:hover {
+  background-color: var(--secondary-blue); 
+  
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Featured Work */
+.featured-work {
+  padding: 40px 20px;
+}
+
+.featured-work .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-work h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.project-card h3 {
+  font-size: 20px;
+  color: var(--primary-blue);
+  margin: 15px 0 10px;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: var(--black);
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+
+.view-project {
+  display: inline-block;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  background-color: var(--primary-blue);   
+  color: var(--white);
+  text-decoration: none;   
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;   
+  cursor: pointer;   
+  border-radius: 26px;
+}
+
+.view-project:hover {
+  background-color: var(--secondary-blue);
+  transform: scale(1.05);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);   
+}
+
+/* Call to action */
+.cta-section {
+  text-align: center;
+}
+
+.cta-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-blue);  
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: var(--black); 
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--primary-blue);
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 26px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;  
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+  background-color: #004085;  
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
